@@ -69,53 +69,60 @@
     .container {
       background-color: rgba(47, 44, 104, 0.3); /* #2f2c68 at 30% */
       border-radius: 40px;
-      padding: 40px 20px;
       width: 90%;
       max-width: 400px;
-      text-align: center;
-      min-height: calc(100vh - 60px);
-      margin: 30px 0;
+      height: calc(100vh - 60px);
+      padding: 30px 20px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .top-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .container img.logo {
-      width: 96px; /* ~1 inch */
-      margin-bottom: 30px;
+      width: 72px; /* a bit smaller than 1 inch */
+      margin-bottom: 20px;
     }
 
     .title {
-      font-size: 12px;
-      margin-bottom: 30px;
+      font-size: 10px;
+      text-align: center;
     }
 
-    .socials-wrapper {
+    .bottom-socials {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
       display: flex;
       flex-direction: column;
+      gap: 15px;
       align-items: flex-start;
     }
 
     .social-group {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      gap: 40px;
-      margin: 20px 0;
+      gap: 10px;
     }
 
     .social-group img {
-      width: 35px;
-      height: 35px;
+      width: 30px;
+      height: 30px;
     }
 
     .btn {
-      padding: 8px 16px;
+      padding: 5px 12px;
       background-color: white;
       color: #2f2c68;
       border-radius: 25px;
-      font-size: 10px;
+      font-size: 8px;
     }
   </style>
 </head>
@@ -136,12 +143,14 @@
     <a onclick="window.location.href='Contact Us.html'">Contact Us</a>
   </div>
 
-  <!-- Socials Container -->
+  <!-- Main Social Section -->
   <div class="container">
-    <img src="mitujilogo.png" class="logo" alt="Mitujilogo" />
-    <div class="title">Follow us on our Social Media</div>
+    <div class="top-section">
+      <img src="mitujilogo.png" class="logo" alt="Mitujilogo" />
+      <div class="title">Follow us on our Social Media</div>
+    </div>
 
-    <div class="socials-wrapper">
+    <div class="bottom-socials">
       <div class="social-group">
         <img src="spotify.png" alt="Spotify" />
         <span class="btn">listen</span>
@@ -165,7 +174,6 @@
     </div>
   </div>
 
-  <!-- Toggle Script -->
   <script>
     function toggleMenu() {
       document.getElementById('dropdownMenu').classList.toggle('active');
