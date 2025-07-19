@@ -11,117 +11,118 @@
   <!-- Google Font: Press Start 2P -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
-  <style>
-    body {
-      margin: 0;
-      background-color: #465494;
-      font-family: 'Press Start 2P', cursive;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
+ <style>
+  body {
+    margin: 0;
+    background-color: #465494;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 
-    .menu-toggle {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      cursor: pointer;
-      z-index: 1000;
-    }
+  .menu-toggle {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 1000;
+  }
 
-    .menu-toggle div {
-      width: 20px;
-      height: 2.5px;
-      background-color: white;
-      margin: 4px 0;
-    }
+  .menu-toggle div {
+    width: 20px;
+    height: 2.5px;
+    background-color: white;
+    margin: 4px 0;
+  }
 
-    .menu {
-      position: absolute;
-      top: 70px;
-      right: 30px;
-      background-color: #3b476f;
-      padding: 15px 20px;
-      border-radius: 12px;
-      display: none;
-      flex-direction: column;
-      gap: 15px;
-      z-index: 999;
-    }
+  .menu {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background-color: #3b476f;
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+  }
 
-    .menu a {
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-      transition: color 0.3s;
-    }
+  .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+  }
 
-    .menu a:hover {
-      color: #a69abe;
-    }
+  .menu a:hover {
+    color: #a69abe;
+  }
 
-    .menu.active {
-      display: flex;
-    }
+  .menu.active {
+    display: flex;
+  }
 
   .container {
-      background-color: rgba(47, 44, 104, 0.3);
-      border-radius: 40px;
-      padding: 40px 20px;
-      width: 90%;
-      max-width: 400px;
-      height: calc(100vh - 60px);
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+    background-color: rgba(47, 44, 104, 0.3);
+    border-radius: 40px;
+    padding: 40px 20px;
+    width: 90%;
+    max-width: 400px;
+    height: calc(100vh - 60px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-    .top-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
+  .top-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 
-    .container img.logo {
-      width: 210px;
-    }
+  .container img.logo {
+    width: 250px; /* Bigger logo */
+  }
 
-    .title {
-      font-size: 12px;
-      text-align: center;
-      line-height: 1.8;
-    }
+  .title {
+    font-size: 12px;
+    text-align: center;
+    line-height: 2;
+  }
 
-    .bottom-socials {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
+  .bottom-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
 
-    .social-group {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+  .social-group {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* more space between icon and button */
+  }
 
-    .social-group img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-    }
+  .social-group img {
+    width: 44px;  /* bigger icons */
+    height: 44px;
+    object-fit: contain;
+  }
 
-    .btn {
-      padding: 8px 16px;
-      background-color: white;
-      color: #2f2c68;
-      border-radius: 25px;
-      font-size: 10px;
-    }
-  </style>
+  .btn {
+    padding: 8px 16px;
+    background-color: white;
+    color: #2f2c68;
+    border-radius: 25px;
+    font-size: 10px;
+  }
+</style>
+  
 </head>
 <body>
 
@@ -145,8 +146,10 @@
     <!-- Top Section -->
     <div class="top-section">
       <img src="mitujilogo.png" class="logo" alt="Logo" />
-      <div class="title">Follow us on our 
-        Social Media</div>
+      <div class="title">
+  Follow us on our<br>
+  Social Media
+</div>
     </div>
 
     <!-- Social Icons -->
