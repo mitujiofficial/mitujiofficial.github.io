@@ -147,6 +147,17 @@
   100% {
     transform: translateY(0);
   }
+
+    @keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.4s ease forwards;
+}
 </style>
 
   
@@ -162,10 +173,11 @@
 
   <!-- Dropdown Menu -->
   <div class="menu" id="dropdownMenu">
-    <a onclick="window.location.href='index.html'">Home</a>
-    <a onclick="window.location.href='Socials.html'">Socials</a>
-    <a onclick="window.location.href='About Us.html'">About Us</a>
-    <a onclick="window.location.href='Contact Us.html'">Contact Us</a>
+<a onclick="navigateWithFade('index.html')">Home</a>
+<a onclick="navigateWithFade('Socials.html')">Socials</a>
+<a onclick="navigateWithFade('About Us.html')">About Us</a>
+<a onclick="navigateWithFade('Contact Us.html')">Contact Us</a>
+
   </div>
 
   <!-- Main Container -->
@@ -209,6 +221,20 @@
       document.getElementById('dropdownMenu').classList.toggle('active');
     }
   </script>
+  
+<script>
+  function toggleMenu() {
+    document.getElementById('dropdownMenu').classList.toggle('active');
+  }
+
+  function navigateWithFade(target) {
+    const body = document.body;
+    body.classList.add('fade-out');
+    setTimeout(() => {
+      window.location.href = target;
+    }, 400); // match duration of the fadeOut animation
+  }
+</script>
 
 </body>
 </html>
