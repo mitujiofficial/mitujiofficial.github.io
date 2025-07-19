@@ -8,7 +8,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.ico" />
 
-  <!-- Google Font: Press Start 2P -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
@@ -17,9 +17,15 @@
       background-color: #465494;
       font-family: 'Press Start 2P', cursive;
       color: white;
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
-    /* Center Logo and Text */
+    body.fade-out {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    /* Logo Centering */
     .logo-container {
       display: flex;
       flex-direction: column;
@@ -35,8 +41,8 @@
     }
 
     @keyframes float {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-10px); }
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
       100% { transform: translateY(0); }
     }
 
@@ -75,6 +81,7 @@
       text-decoration: none;
       font-size: 15px;
       transition: color 0.3s;
+      cursor: pointer;
     }
 
     .menu a:hover {
@@ -89,17 +96,6 @@
       .logo-container {
         height: 70vh;
       }
-
-      @keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-}
-
-.fade-out {
-  animation: fadeOut 0.4s ease forwards;
-}
     }
   </style>
 </head>
@@ -112,41 +108,31 @@
     <div></div>
   </div>
 
-  <!-- Menu Links -->
-    <div class="menu" id="dropdownMenu">
-   <a onclick="navigateWithFade('index.html')">Home</a>
-<a onclick="navigateWithFade('Socials.html')">Socials</a>
-<a onclick="navigateWithFade('About Us.html')">About Us</a>
-<a onclick="navigateWithFade('Contact Us.html')">Contact Us</a>
-   
+  <!-- Dropdown Menu -->
+  <div class="menu" id="dropdownMenu">
+    <a onclick="navigateWithFade('index.html')">Home</a>
+    <a onclick="navigateWithFade('Socials.html')">Socials</a>
+    <a onclick="navigateWithFade('About Us.html')">About Us</a>
+    <a onclick="navigateWithFade('Contact Us.html')">Contact Us</a>
   </div>
-  
- <!-- Center Logo and Label -->
+
+  <!-- Center Logo -->
   <div class="logo-container">
-  <img src="mitujilogo.png" alt="Mitujilogo" />
-</div>
+    <img src="mitujilogo.png" alt="Mitujilogo" />
+  </div>
 
-
-  <!-- Toggle Script -->
   <script>
     function toggleMenu() {
       document.getElementById('dropdownMenu').classList.toggle('active');
     }
+
+    function navigateWithFade(target) {
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = target;
+      }, 400); // Matches fade-out transition duration
+    }
   </script>
-
-  <script>
-  function toggleMenu() {
-    document.getElementById('dropdownMenu').classList.toggle('active');
-  }
-
-  function navigateWithFade(target) {
-    const body = document.body;
-    body.classList.add('fade-out');
-    setTimeout(() => {
-      window.location.href = target;
-    }, 400); // match duration of the fadeOut animation
-  }
-</script>
 
 </body>
 </html>
