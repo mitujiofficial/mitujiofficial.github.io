@@ -72,11 +72,12 @@
       padding: 40px 20px;
       width: 90%;
       max-width: 400px;
-      height: calc(100vh - 60px);
+      height: auto;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 50px;
     }
 
     .top-section {
@@ -87,29 +88,31 @@
     }
 
     .container img.logo {
-      width: 96px; /* About 1 inch */
+      width: 110px;
     }
 
     .title {
       font-size: 12px;
       text-align: center;
+      line-height: 1.8;
     }
 
     .bottom-socials {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 25px;
     }
 
     .social-group {
       display: flex;
       align-items: center;
-      gap: 15px; /* Spacing between icon and text */
+      gap: 20px;
     }
 
     .social-group img {
-      width: 35px;
-      height: 35px;
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
     }
 
     .btn {
@@ -157,7 +160,7 @@
         <div class="btn">listen</div>
       </div>
       <div class="social-group">
-        <img src="instagram.png" alt="Instagram" />
+        <img src="linkedin.png" alt="LinkedIn" />
         <div class="btn">follow</div>
       </div>
       <div class="social-group">
