@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mitujilogo Site</title>
 
   <!-- Google Font: Press Start 2P -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
     body {
@@ -27,14 +27,14 @@
     }
 
     .logo-container img {
-      max-width: 500px;
+      max-width: 300px;
       animation: float 3s ease-in-out infinite;
     }
 
     .logo-text {
-      margin-top: 20px;
-      font-size: 19px;
-      letter-spacing: 1px;
+      margin-top: 25px;
+      font-size: 18px;
+      letter-spacing: 2px;
     }
 
     @keyframes float {
@@ -53,10 +53,10 @@
     }
 
     .menu-toggle div {
-      width: 30px;
-      height: 4px;
+      width: 22px;
+      height: 3px;
       background-color: white;
-      margin: 6px 0;
+      margin: 5px 0;
     }
 
     /* Dropdown Menu */
@@ -76,7 +76,7 @@
     .menu a {
       color: white;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 16px;
       transition: color 0.3s;
     }
 
@@ -94,35 +94,4 @@
       }
     }
   </style>
-</head>
-<body>
-
-  <!-- Hamburger Icon -->
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <!-- Menu Links -->
-  <div class="menu" id="dropdownMenu">
-    <a href="#">Home</a>
-    <a href="#">Music + Video</a>
-    <a href="#">About Us</a>
-    <a href="#">Contact Us</a>
-  </div>
-
-  <!-- Center Logo and Label -->
-  <div class="logo-container">
-    <img src="mitujilogo.png" alt="Mitujilogo">
-    <div class="logo-text">MITUJI</div>
-  </div>
-
-  <!-- Toggle Script -->
-  <script>
-    function toggleMenu() {
-      document.getElementById('dropdownMenu').classList.toggle('active');
-    }
-  </script>
-</body>
-</html>
+</h
