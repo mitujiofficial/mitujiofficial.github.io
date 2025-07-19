@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mitujilogo Site</title>
+  
+  <!-- Google Font: Press Start 2P -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #465494;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+    }
+
+    /* Center Logo */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .logo-container img {
+      max-width: 80%;
+      height: auto;
+    }
+
+    /* Hamburger Menu */
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .menu-toggle div {
+      width: 30px;
+      height: 4px;
+      background-color: white;
+      margin: 6px 0;
+    }
+
+    /* Menu Links */
+    .menu {
+      position: absolute;
+      top: 70px;
+      right: 30px;
+      background-color: #3b476f;
+      padding: 10px;
+      border-radius: 10px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 10px;
+    }
+
+    .menu a:hover {
+      color: #a69abe;
+    }
+
+    /* Show Menu when active */
+    .menu.active {
+      display: flex;
+    }
+
+    /* Responsive logo spacing */
+    @media (max-height: 600px) {
+      .logo-container {
+        height: 70vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hamburger Icon -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Menu Content -->
+  <div class="menu" id="dropdownMenu">
+    <a href="#">Home</a>
+    <a href="#">Music + Video</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact Us</a>
+  </div>
+
+  <!-- Centered Logo -->
+  <div class="logo-container">
+    <img src="mitujilogo.png" alt="Mitujilogo">
+  </div>
+
+  <!-- Script to toggle menu -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('dropdownMenu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
