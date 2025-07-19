@@ -5,163 +5,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>mitujiofficial music</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.ico" />
-
-  <!-- Google Font: Press Start 2P -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
-<style>
-  body {
-    margin: 0;
-    background-color: #465494;
-    font-family: 'Press Start 2P', cursive;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+  <style>
+    body {
+      margin: 0;
+      background-color: #465494;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
 
-  .menu-toggle {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
-    z-index: 1000;
-  }
+    body.fade-out {
+      opacity: 0;
+      transform: scale(0.98);
+    }
 
-  .menu-toggle div {
-    width: 20px;
-    height: 2.5px;
-    background-color: white;
-    margin: 4px 0;
-  }
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      cursor: pointer;
+      z-index: 1000;
+    }
 
-  .menu {
-    position: absolute;
-    top: 70px;
-    right: 30px;
-    background-color: #3b476f;
-    padding: 15px 20px;
-    border-radius: 12px;
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 999;
-  }
+    .menu-toggle div {
+      width: 20px;
+      height: 2.5px;
+      background-color: white;
+      margin: 4px 0;
+    }
 
-  .menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    transition: color 0.3s;
-  }
+    .menu {
+      position: absolute;
+      top: 70px;
+      right: 30px;
+      background-color: #3b476f;
+      padding: 15px 20px;
+      border-radius: 12px;
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 999;
+    }
 
-  .menu a:hover {
-    color: #a69abe;
-  }
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
 
-  .menu.active {
-    display: flex;
-  }
+    .menu a:hover {
+      color: #a69abe;
+    }
 
-  .container {
-    background-color: rgba(47, 44, 104, 0.3);
-    border-radius: 40px;
-    padding: 40px 20px;
-    width: 90%;
-    max-width: 400px;
-    min-height: 620px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 40px;
-  }
+    .menu.active {
+      display: flex;
+    }
 
- .top-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  margin-top: -20px;
-  max-width: 300px;
-  
-}
+    .container {
+      background-color: rgba(47, 44, 104, 0.3);
+      border-radius: 40px;
+      padding: 40px 20px;
+      width: 90%;
+      max-width: 400px;
+      min-height: 620px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 40px;
+    }
 
- .container img.logo {
-  width: 230px;
-  animation: float 3s ease-in-out infinite;
-}
+    .top-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      margin-top: -20px;
+      max-width: 300px;
+    }
 
-  .title {
-    font-size: 11px;
-    text-align: center;
-    line-height: 1.8;
-  }
+    .logo {
+      width: 230px;
+      animation: float 3s ease-in-out infinite;
+    }
 
-  .bottom-socials {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
+    .title {
+      font-size: 11px;
+      text-align: center;
+      line-height: 1.8;
+    }
 
-  .social-group {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-  }
+    .bottom-socials {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
 
-  .social-group img {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-}
+    .social-group {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
 
-.social-group.tiktok img {
-  width: 52px;
-  height: 52px;
-}
+    .social-group img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
 
-  .social-group.tiktok .btn {
-  margin-top: 3px;
-}
+    .social-group.tiktok img {
+      width: 52px;
+      height: 52px;
+    }
 
-  .btn {
-    padding: 8px 16px;
-    background-color: white;
-    color: #2f2c68;
-    border-radius: 25px;
-    font-size: 10px;
-  }
+    .btn {
+      padding: 8px 16px;
+      background-color: white;
+      color: #2f2c68;
+      border-radius: 25px;
+      font-size: 10px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Press Start 2P', cursive;
+      transition: background-color 0.3s ease;
+    }
 
-  @keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+    .btn:hover {
+      background-color: #ddd;
+    }
 
-    @keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-}
-
-.fade-out {
-  animation: fadeOut 0.4s ease forwards;
-}
-</style>
-
-  
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- Hamburger Icon -->
@@ -173,45 +169,43 @@
 
   <!-- Dropdown Menu -->
   <div class="menu" id="dropdownMenu">
-<a onclick="navigateWithFade('index.html')">Home</a>
-<a onclick="navigateWithFade('Socials.html')">Socials</a>
-<a onclick="navigateWithFade('About Us.html')">About Us</a>
-<a onclick="navigateWithFade('Contact Us.html')">Contact Us</a>
-
+    <a onclick="fadeToPage('index.html')">Home</a>
+    <a onclick="fadeToPage('Socials.html')">Socials</a>
+    <a onclick="fadeToPage('About Us.html')">About Us</a>
+    <a onclick="fadeToPage('Contact Us.html')">Contact Us</a>
   </div>
 
   <!-- Main Container -->
   <div class="container">
-    <!-- Top Section -->
     <div class="top-section">
       <img src="mitujilogo.png" class="logo" alt="Logo" />
       <div class="title">
-  Follow us on our<br>
-  Social Media
-</div>
+        Follow us on our<br>
+        Social Media
+      </div>
     </div>
 
     <!-- Social Icons -->
     <div class="bottom-socials">
       <div class="social-group">
         <img src="spotify.png" alt="Spotify" />
-        <div class="btn">listen</div>
+        <button class="btn">listen</button>
       </div>
       <div class="social-group">
         <img src="youtube.png" alt="YouTube" />
-        <div class="btn">listen</div>
+        <button class="btn">listen</button>
       </div>
       <div class="social-group">
-        <img src="insta.png" alt="LinkedIn" />
-        <div class="btn">follow</div>
+        <img src="insta.png" alt="Instagram" />
+        <button class="btn">follow</button>
       </div>
       <div class="social-group">
         <img src="facebook.png" alt="Facebook" />
-        <div class="btn">follow</div>
+        <button class="btn">follow</button>
       </div>
-     <div class="social-group">
+      <div class="social-group tiktok">
         <img src="tiktok.png" alt="TikTok" />
-        <div class="btn">follow</div>
+        <button class="btn">follow</button>
       </div>
     </div>
   </div>
@@ -220,21 +214,14 @@
     function toggleMenu() {
       document.getElementById('dropdownMenu').classList.toggle('active');
     }
-  </script>
-  
-<script>
-  function toggleMenu() {
-    document.getElementById('dropdownMenu').classList.toggle('active');
-  }
 
-  function navigateWithFade(target) {
-    const body = document.body;
-    body.classList.add('fade-out');
-    setTimeout(() => {
-      window.location.href = target;
-    }, 400); // match duration of the fadeOut animation
-  }
-</script>
+    function fadeToPage(url) {
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = url;
+      }, 600); // match transition duration
+    }
+  </script>
 
 </body>
 </html>
