@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mitujilogo Site</title>
-  
+
   <!-- Google Font: Press Start 2P -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
@@ -16,17 +16,31 @@
       color: white;
     }
 
-    /* Center Logo */
+    /* Center Logo and Text */
     .logo-container {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      text-align: center;
     }
 
     .logo-container img {
-      max-width: 80%;
-      height: auto;
+      max-width: 200px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .logo-text {
+      margin-top: 20px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
     }
 
     /* Hamburger Menu */
@@ -45,37 +59,35 @@
       margin: 6px 0;
     }
 
-    /* Menu Links */
+    /* Dropdown Menu */
     .menu {
       position: absolute;
       top: 70px;
       right: 30px;
       background-color: #3b476f;
-      padding: 10px;
-      border-radius: 10px;
+      padding: 15px 20px;
+      border-radius: 12px;
       display: none;
       flex-direction: column;
-      gap: 10px;
+      gap: 15px;
       z-index: 999;
     }
 
     .menu a {
       color: white;
       text-decoration: none;
+      font-size: 14px;
       transition: color 0.3s;
-      font-size: 10px;
     }
 
     .menu a:hover {
       color: #a69abe;
     }
 
-    /* Show Menu when active */
     .menu.active {
       display: flex;
     }
 
-    /* Responsive logo spacing */
     @media (max-height: 600px) {
       .logo-container {
         height: 70vh;
@@ -92,7 +104,7 @@
     <div></div>
   </div>
 
-  <!-- Menu Content -->
+  <!-- Menu Links -->
   <div class="menu" id="dropdownMenu">
     <a href="#">Home</a>
     <a href="#">Music + Video</a>
@@ -100,12 +112,13 @@
     <a href="#">Contact Us</a>
   </div>
 
-  <!-- Centered Logo -->
+  <!-- Center Logo and Label -->
   <div class="logo-container">
     <img src="mitujilogo.png" alt="Mitujilogo">
+    <div class="logo-text">MITUJI</div>
   </div>
 
-  <!-- Script to toggle menu -->
+  <!-- Toggle Script -->
   <script>
     function toggleMenu() {
       document.getElementById('dropdownMenu').classList.toggle('active');
