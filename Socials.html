@@ -11,112 +11,113 @@
   <!-- Google Font: Press Start 2P -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
-<style>
-  body {
-    margin: 0;
-    background-color: #465494;
-    font-family: 'Press Start 2P', cursive;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+  <style>
+    body {
+      margin: 0;
+      background-color: #465494;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-  .menu-toggle {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
-    z-index: 1000;
-  }
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      cursor: pointer;
+      z-index: 1000;
+    }
 
-  .menu-toggle div {
-    width: 20px;
-    height: 2.5px;
-    background-color: white;
-    margin: 4px 0;
-  }
+    .menu-toggle div {
+      width: 20px;
+      height: 2.5px;
+      background-color: white;
+      margin: 4px 0;
+    }
 
-  .menu {
-    position: absolute;
-    top: 70px;
-    right: 30px;
-    background-color: #3b476f;
-    padding: 15px 20px;
-    border-radius: 12px;
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 999;
-  }
+    .menu {
+      position: absolute;
+      top: 70px;
+      right: 30px;
+      background-color: #3b476f;
+      padding: 15px 20px;
+      border-radius: 12px;
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 999;
+    }
 
-  .menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    transition: color 0.3s;
-  }
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
 
-  .menu a:hover {
-    color: #a69abe;
-  }
+    .menu a:hover {
+      color: #a69abe;
+    }
 
-  .menu.active {
-    display: flex;
-  }
+    .menu.active {
+      display: flex;
+    }
 
-.container {
-  background-color: rgba(47, 44, 104, 0.3); /* #2f2c68 at 30% */
-  border-radius: 40px;
-  padding: 40px 20px;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
+    .container {
+      background-color: rgba(47, 44, 104, 0.3); /* #2f2c68 at 30% */
+      border-radius: 40px;
+      padding: 40px 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      min-height: calc(100vh - 60px);
+      margin: 30px 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
 
-  /* NEW: extend to bottom but with spacing */
-  height: calc(100vh - 60px); /* full height minus top/bottom margin */
-  margin: 30px 0; /* adds spacing at top and bottom */
-  box-sizing: border-box;
-}
-  .container img.logo {
-    width: 96px; /* ~1 inch */
-    margin-bottom: 30px;
-  }
+    .container img.logo {
+      width: 96px; /* ~1 inch */
+      margin-bottom: 30px;
+    }
 
-  .title {
-    font-size: 12px;
-    margin-bottom: 30px;
-  }
+    .title {
+      font-size: 12px;
+      margin-bottom: 30px;
+    }
 
-  .social-group {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 40px; /* wider spacing between icon and text */
-    margin: 20px 0; /* more spacing between each row */
-  }
+    .socials-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-  .social-group img {
-    width: 35px;
-    height: 35px;
-  }
+    .social-group {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 40px;
+      margin: 20px 0;
+    }
 
-  .btn {
-    padding: 8px 16px;
-    background-color: white;
-    color: #2f2c68;
-    border-radius: 25px;
-    font-size: 10px;
-  }
+    .social-group img {
+      width: 35px;
+      height: 35px;
+    }
 
-  .socials-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-</style>
-
+    .btn {
+      padding: 8px 16px;
+      background-color: white;
+      color: #2f2c68;
+      border-radius: 25px;
+      font-size: 10px;
+    }
+  </style>
 </head>
 <body>
 
@@ -133,14 +134,43 @@
     <a onclick="window.location.href='Socials.html'">Socials</a>
     <a onclick="window.location.href='About Us.html'">About Us</a>
     <a onclick="window.location.href='Contact Us.html'">Contact Us</a>
-   
   </div>
-  
+
+  <!-- Socials Container -->
+  <div class="container">
+    <img src="mitujilogo.png" class="logo" alt="Mitujilogo" />
+    <div class="title">Follow us on our Social Media</div>
+
+    <div class="socials-wrapper">
+      <div class="social-group">
+        <img src="spotify.png" alt="Spotify" />
+        <span class="btn">listen</span>
+      </div>
+      <div class="social-group">
+        <img src="youtube.png" alt="YouTube" />
+        <span class="btn">listen</span>
+      </div>
+      <div class="social-group">
+        <img src="insta.png" alt="Instagram" />
+        <span class="btn">follow</span>
+      </div>
+      <div class="social-group">
+        <img src="facebook.png" alt="Facebook" />
+        <span class="btn">follow</span>
+      </div>
+      <div class="social-group">
+        <img src="tiktok.png" alt="TikTok" />
+        <span class="btn">follow</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Toggle Script -->
   <script>
     function toggleMenu() {
       document.getElementById('dropdownMenu').classList.toggle('active');
     }
   </script>
+
 </body>
 </html>
