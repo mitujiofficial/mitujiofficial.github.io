@@ -12,20 +12,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background-color: #465494;
       font-family: 'Press Start 2P', cursive;
       color: white;
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      opacity: 0;
+      transform: scale(0.98);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
+      transform: scale(1);
     }
 
     body.fade-out {
       opacity: 0;
       transform: scale(0.95);
+      pointer-events: none;
     }
 
-    /* Logo Centering */
+    /* Centered Logo Container */
     .logo-container {
       display: flex;
       flex-direction: column;
@@ -121,17 +133,24 @@
     <img src="mitujilogo.png" alt="Mitujilogo" />
   </div>
 
+  <!-- JavaScript -->
   <script>
     function toggleMenu() {
       document.getElementById('dropdownMenu').classList.toggle('active');
     }
 
     function navigateWithFade(target) {
+      document.body.classList.remove('fade-in');
       document.body.classList.add('fade-out');
       setTimeout(() => {
         window.location.href = target;
-      }, 400); // Matches fade-out transition duration
+      }, 500); // match transition time
     }
+
+    // Add fade-in on page load
+    window.addEventListener('load', () => {
+      document.body.classList.add('fade-in');
+    });
   </script>
 
 </body>
