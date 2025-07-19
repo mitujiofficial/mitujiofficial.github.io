@@ -94,4 +94,35 @@
       }
     }
   </style>
-</h
+</head>
+<body>
+
+  <!-- Hamburger Icon -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Menu Links -->
+  <div class="menu" id="dropdownMenu">
+    <a href="#">Home</a>
+    <a href="#">Music + Video</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact Us</a>
+  </div>
+
+  <!-- Center Logo and Label -->
+  <div class="logo-container">
+    <img src="mitujilogo.png" alt="Mitujilogo" />
+    <div class="logo-text">MITUJI</div>
+  </div>
+
+  <!-- Toggle Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('dropdownMenu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
