@@ -8,7 +8,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.ico" />
 
-  <!-- Google Font: Press Start 2P -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
@@ -20,7 +20,8 @@
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
-    body.fade-out {
+    /* Fade-out effect */
+    .fade-out {
       opacity: 0;
       transform: scale(0.95);
     }
@@ -81,7 +82,7 @@
     <div></div>
   </div>
 
-  <!-- Menu Links -->
+  <!-- Dropdown Menu -->
   <div class="menu" id="dropdownMenu">
     <a onclick="navigateWithFade('index.html')">Home</a>
     <a onclick="navigateWithFade('Socials.html')">Socials</a>
@@ -89,7 +90,7 @@
     <a onclick="navigateWithFade('Contact Us.html')">Contact Us</a>
   </div>
 
-  <!-- Script -->
+  <!-- Scripts -->
   <script>
     function toggleMenu() {
       document.getElementById('dropdownMenu').classList.toggle('active');
@@ -97,9 +98,9 @@
 
     function navigateWithFade(target) {
       document.body.classList.add('fade-out');
-      setTimeout(() => {
+      setTimeout(function () {
         window.location.href = target;
-      }, 400); // Match transition duration
+      }, 400); // Matches CSS transition duration
     }
   </script>
 
