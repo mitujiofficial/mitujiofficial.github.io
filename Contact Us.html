@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>mitujiofficial music</title>
+  <title>Contact Us - mitujiofficial</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.ico" />
@@ -17,16 +17,51 @@
       background-color: #465494;
       font-family: 'Press Start 2P', cursive;
       color: white;
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
     }
 
-    /* Fade-out effect */
-    .fade-out {
-      opacity: 0;
-      transform: scale(0.95);
+    .message {
+      margin-bottom: 50px;
+      font-size: 14px;
     }
 
-    /* Hamburger Menu */
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    input[type="email"], textarea {
+      font-family: 'Press Start 2P', cursive;
+      padding: 10px;
+      width: 90%;
+      max-width: 400px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #3b476f;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 10px;
+    }
+
+    button:hover {
+      background-color: #5f6c9f;
+    }
+
+    /* Menu Styling (reuse from previous page) */
     .menu-toggle {
       position: absolute;
       top: 20px;
@@ -42,7 +77,6 @@
       margin: 4px 0;
     }
 
-    /* Dropdown Menu */
     .menu {
       position: absolute;
       top: 70px;
@@ -71,6 +105,7 @@
     .menu.active {
       display: flex;
     }
+
   </style>
 </head>
 <body>
@@ -90,6 +125,17 @@
     <a onclick="navigateWithFade('Contact Us.html')">Contact Us</a>
   </div>
 
+  <div class="message">
+    If you have any questions or inquiries,<br>feel free to contact us.
+  </div>
+
+  <!-- Contact Form -->
+  <form onsubmit="sendEmail(event)">
+    <input type="email" id="email" placeholder="Your email" required />
+    <textarea id="message" rows="4" placeholder="Your message" required></textarea>
+    <button type="submit">Send Email</button>
+  </form>
+
   <!-- Scripts -->
   <script>
     function toggleMenu() {
@@ -100,7 +146,15 @@
       document.body.classList.add('fade-out');
       setTimeout(function () {
         window.location.href = target;
-      }, 400); // Matches CSS transition duration
+      }, 400);
+    }
+
+    function sendEmail(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const mailtoLink = `mailto:mitujiofficial@gmail.com?subject=Inquiry from ${email}&body=${encodeURIComponent(message)}`;
+      window.location.href = mailtoLink;
     }
   </script>
 
