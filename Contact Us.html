@@ -25,6 +25,12 @@
       padding: 20px;
     }
 
+    .logo {
+      height: auto;
+      width: 230px;
+      animation: float 3s ease-in-out infinite;
+    }
+
     .message {
       margin-bottom: 50px;
       font-size: 14px;
@@ -125,6 +131,10 @@
     <a onclick="navigateWithFade('Contact Us.html')">Contact Us</a>
   </div>
 
+  <!-- Logo -->
+  <img src="mitujilogo.png" alt="mituji logo" class="logo" />
+
+  <!-- Contact Message -->
   <div class="message">
     If you have any questions or inquiries,<br>feel free to contact us.
   </div>
@@ -153,7 +163,7 @@
       event.preventDefault();
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
-      const mailtoLink = `mailto:mitujiofficial@gmail.com?subject=Inquiry from ${email}&body=${encodeURIComponent(message)}`;
+      const mailtoLink = `mailto:your@email.com?subject=Inquiry from ${email}&body=${encodeURIComponent(message)}`;
       window.location.href = mailtoLink;
     }
   </script>
