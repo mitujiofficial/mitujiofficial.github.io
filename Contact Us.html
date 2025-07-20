@@ -4,11 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us - mitujiofficial</title>
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.ico" />
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
@@ -77,7 +73,6 @@
       background-color: #5f6c9f;
     }
 
-    /* Menu Styling */
     .menu-toggle {
       position: absolute;
       top: 20px;
@@ -95,7 +90,6 @@
 
     .menu {
       position: absolute;
-      text-align: left;
       top: 70px;
       right: 30px;
       background-color: #3b476f;
@@ -105,6 +99,8 @@
       flex-direction: column;
       gap: 15px;
       z-index: 999;
+      text-align: right;
+      align-items: flex-end;
     }
 
     .menu a {
@@ -149,14 +145,13 @@
     If you have any questions or inquiries,<br>feel free to contact us.
   </div>
 
-  <!-- Email Form (HTML mailto version) -->
-  <form action="mailto:mitujiofficial@gmail.com" method="POST" enctype="text/plain">
+  <!-- Secure Contact Form -->
+  <form action="https://formspree.io/f/yourformid" method="POST">
     <input type="email" name="email" placeholder="Your email" required />
     <textarea name="message" rows="4" placeholder="Your message" required></textarea>
     <button type="submit">Send Email</button>
   </form>
 
-  <!-- JS for dropdown (still works!) -->
   <script>
     function toggleMenu() {
       document.getElementById('dropdownMenu').classList.toggle('active');
