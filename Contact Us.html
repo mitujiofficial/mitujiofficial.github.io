@@ -140,22 +140,22 @@
     <a onclick="navigateWithFade('Contact Us.html')">Contact Us</a>
   </div>
 
-  <!-- Logo (centered and animated) -->
+  <!-- Logo -->
   <img src="mitujilogo.png" alt="mituji logo" class="logo" />
 
-  <!-- Contact Message -->
+  <!-- Message -->
   <div class="message">
     If you have any questions or inquiries,<br>feel free to contact us.
   </div>
 
-  <!-- Contact Form -->
-  <form onsubmit="sendEmail(event)">
-    <input type="email" id="email" placeholder="Your email" required />
-    <textarea id="message" rows="4" placeholder="Your message" required></textarea>
+  <!-- Email Form (HTML mailto version) -->
+  <form action="mailto:mitujiofficial@gmail.com" method="POST" enctype="text/plain">
+    <input type="email" name="email" placeholder="Your email" required />
+    <textarea name="message" rows="4" placeholder="Your message" required></textarea>
     <button type="submit">Send Email</button>
   </form>
 
-  <!-- Scripts -->
+  <!-- JS for dropdown (still works!) -->
   <script>
     function toggleMenu() {
       document.getElementById('dropdownMenu').classList.toggle('active');
@@ -166,14 +166,6 @@
       setTimeout(function () {
         window.location.href = target;
       }, 400);
-    }
-
-    function sendEmail(event) {
-      event.preventDefault();
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      const mailtoLink = `mailto:mitujiofficial@gmail.com?subject=Inquiry from ${email}&body=${encodeURIComponent(message)}`;
-      window.location.href = mailtoLink;
     }
   </script>
 
