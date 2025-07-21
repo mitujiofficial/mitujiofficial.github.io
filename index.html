@@ -16,6 +16,10 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+    }
+
     body {
       margin: 0;
       background-color: #465494;
@@ -38,7 +42,7 @@
     }
 
     /* Watermark */
-     .watermark {
+    .watermark {
       position: fixed;
       bottom: 0px;
       right: 0px;
@@ -57,7 +61,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 80vh; /* was 100vh */
+      min-height: 80vh;
       text-align: center;
     }
 
@@ -147,7 +151,7 @@
 
   <!-- Center Logo -->
   <div class="logo-container">
-    <img src="mitujilogo.png" alt="mitujilogo" />
+    <img src="mitujilogo.png" alt="Mitujilogo" />
   </div>
 
   <!-- JavaScript -->
@@ -161,10 +165,9 @@
       document.body.classList.add('fade-out');
       setTimeout(() => {
         window.location.href = target;
-      }, 500); // match transition time
+      }, 500);
     }
 
-    // Add fade-in on page load
     window.addEventListener('load', () => {
       document.body.classList.add('fade-in');
     });
