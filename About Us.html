@@ -17,13 +17,7 @@
       background-color: #465494;
       font-family: 'Press Start 2P', cursive;
       color: white;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-
-    /* Fade-out effect */
-    .fade-out {
-      opacity: 0;
-      transform: scale(0.95);
+      text-align: center;
     }
 
     /* Hamburger Menu */
@@ -42,7 +36,6 @@
       margin: 4px 0;
     }
 
-    /* Dropdown Menu */
     .menu {
       position: absolute;
       top: 70px;
@@ -71,6 +64,54 @@
     .menu.active {
       display: flex;
     }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-width: 90%;
+      margin: 100px auto 50px;
+    }
+
+    .slide-image {
+      display: none;
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+    }
+
+    .slide-image.active {
+      display: block;
+    }
+
+    .slide-button {
+      margin-top: 10px;
+      background-color: #3b476f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 10px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    /* About Section */
+    .about-section {
+      margin-top: 80px;
+      padding: 20px;
+    }
+
+    .about-title {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .about-text {
+      font-size: 10px;
+      max-width: 90%;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
   </style>
 </head>
 <body>
@@ -90,7 +131,22 @@
     <a onclick="navigateWithFade('Contact Us.html')">Contact Us</a>
   </div>
 
-  <!-- Scripts -->
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+    <img src="mitujimem.png" class="slide-image active" />
+    <img src="aly.png" class="slide-image" />
+    <img src="wei.png" class="slide-image" />
+    <button class="slide-button" onclick="nextSlide()">Next</button>
+  </div>
+
+  <!-- About Section -->
+  <div class="about-section">
+    <div class="about-title">About Us</div>
+    <div class="about-text">
+      Hi, we’re Mituji a band currently made up of two members, Aly and Weiam. No genres. Just stories, soul, and sound. 💅 We’re here to create music that speaks, feels, and stays.
+    </div>
+  </div>
+
   <script>
     function toggleMenu() {
       document.getElementById('dropdownMenu').classList.toggle('active');
@@ -100,8 +156,25 @@
       document.body.classList.add('fade-out');
       setTimeout(function () {
         window.location.href = target;
-      }, 400); // Matches CSS transition duration
+      }, 400);
     }
+
+    // Slideshow Logic
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide-image');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 6000); // Auto switch every 6 seconds
   </script>
 
 </body>
