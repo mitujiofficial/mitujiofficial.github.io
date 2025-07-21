@@ -9,18 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
-
-  .watermark {
-  position: fixed;
-  bottom: 10px;
-  right: 15px;
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.4); /* subtle white */
-  font-family: 'Press Start 2P', cursive;
-  z-index: 9999;
-  pointer-events: none;
-}
-
     * {
       box-sizing: border-box;
     }
@@ -146,42 +134,48 @@
       object-fit: contain;
     }
 
-  
-
-   .btn {
-  padding: 8px 16px;
-  background-color: white;
-  color: #2f2c68;
-  border-radius: 25px;
-  font-size: 10px;
-  border: none;
-  cursor: pointer;
-  font-family: 'Press Start 2P', cursive;
-  transition: background-color 0.3s ease;
-  text-decoration: none; /* ← removes underline */
-  display: inline-block; /* ← helps it behave like a button */
-}
+    .btn {
+      padding: 8px 16px;
+      background-color: white;
+      color: #2f2c68;
+      border-radius: 25px;
+      font-size: 10px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Press Start 2P', cursive;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
 
     .btn:hover {
       background-color: #ddd;
     }
 
     @keyframes float {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-      100% {
-        transform: translateY(0);
-      }
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Watermark */
+    .watermark {
+      position: fixed;
+      bottom: 10px;
+      right: 15px;
+      font-size: 10px;
+      color: white;
+      opacity: 0.5;
+      font-family: 'Press Start 2P', cursive;
+      z-index: 9999;
+      pointer-events: none;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Watermark -->
   <div class="watermark">© 2025 by alie for Mituji</div>
 
   <!-- Hamburger Icon -->
@@ -199,7 +193,7 @@
     <a href="#" onclick="fadeToPage('Contact Us.html'); return false;">Contact Us</a>
   </div>
 
-  <!-- Main Container -->
+  <!-- MAIN CONTENT (Change This Per Page) -->
   <div class="container">
     <div class="top-section">
       <img src="mitujilogo.png" class="logo" alt="Logo" />
@@ -209,31 +203,32 @@
       </div>
     </div>
 
-    <!-- Social Icons -->
-   <div class="bottom-socials">
-  <div class="social-group">
-    <img src="spotify.png" alt="Spotify" />
-    <a class="btn" href="https://open.spotify.com" target="_blank">listen</a>
+    <!-- Example: Social Media Buttons -->
+    <div class="bottom-socials">
+      <div class="social-group">
+        <img src="spotify.png" alt="Spotify" />
+        <a class="btn" href="https://open.spotify.com" target="_blank">listen</a>
+      </div>
+      <div class="social-group">
+        <img src="youtube.png" alt="YouTube" />
+        <a class="btn" href="https://www.youtube.com/@mitujiofficial" target="_blank">listen</a>
+      </div>
+      <div class="social-group">
+        <img src="insta.png" alt="Instagram" />
+        <a class="btn" href="https://www.instagram.com/mitujiopisyal/" target="_blank">follow</a>
+      </div>
+      <div class="social-group">
+        <img src="facebook.png" alt="Facebook" />
+        <a class="btn" href="https://www.facebook.com/profile.php?id=61578138546201" target="_blank">follow</a>
+      </div>
+      <div class="social-group">
+        <img src="tiktok.png" alt="TikTok" />
+        <a class="btn" href="https://www.tiktok.com/@mitujiofficial" target="_blank">follow</a>
+      </div>
+    </div>
   </div>
-  <div class="social-group">
-    <img src="youtube.png" alt="YouTube" />
-    <a class="btn" href="https://www.youtube.com/@mitujiofficial" target="_blank">listen</a>
-  </div>
-  <div class="social-group">
-    <img src="insta.png" alt="Instagram" />
-    <a class="btn" href="https://www.instagram.com/mitujiopisyal/" target="_blank">follow</a>
-  </div>
-  <div class="social-group">
-    <img src="facebook.png" alt="Facebook" />
-    <a class="btn" href="https://www.facebook.com/profile.php?id=61578138546201" target="_blank">follow</a>
-  </div>
-  <div class="social-group tiktok">
-    <img src="tiktok.png" alt="TikTok" />
-    <a class="btn" href="https://www.tiktok.com/@mitujiofficial" target="_blank">follow</a>
-  </div>
-</div>
 
-  <!-- JavaScript -->
+  <!-- JS for Menu + Transitions -->
   <script>
     function toggleMenu() {
       document.getElementById('dropdownMenu').classList.toggle('active');
@@ -244,10 +239,9 @@
       document.body.classList.add('fade-out');
       setTimeout(() => {
         window.location.href = url;
-      }, 600); // Match the CSS transition time
+      }, 600);
     }
 
-    // Fade-in on page load
     window.addEventListener('load', () => {
       document.body.classList.add('fade-in');
     });
