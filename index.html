@@ -12,19 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
   <style>
-    
-.watermark {
-  position: fixed;
-  bottom: 10px;
-  right: 15px;
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.4); /* subtle white */
-  font-family: 'Press Start 2P', cursive;
-  z-index: 9999;
-  pointer-events: none;
-}
-
-    
     * {
       box-sizing: border-box;
     }
@@ -50,13 +37,26 @@
       pointer-events: none;
     }
 
-    /* Centered Logo Container */
+    /* Watermark */
+    .watermark {
+      position: fixed;
+      bottom: 10px;
+      right: 15px;
+      font-size: 10px;
+      color: white;
+      font-family: 'Press Start 2P', cursive;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    /* Logo Container */
     .logo-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 80vh; /* was 100vh */
       text-align: center;
     }
 
@@ -125,8 +125,9 @@
   </style>
 </head>
 <body>
-  
-<div class="watermark">© 2025 by alie for Mituji</div>
+
+  <!-- Watermark -->
+  <div class="watermark">© 2025 by alie for Mituji</div>
 
   <!-- Hamburger Icon -->
   <div class="menu-toggle" onclick="toggleMenu()">
